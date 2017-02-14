@@ -725,7 +725,8 @@ SURVEY BLOCK
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 31.76157%; }
+    width: 31.76157%;
+    height: 400px; }
     .survey-results .survey-card:last-child {
       margin-right: 0; }
     .survey-results .survey-card img {

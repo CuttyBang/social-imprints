@@ -16,7 +16,48 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      // Define the chart to be drawn.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Satisfaction');
+      data.addColumn('number', 'Percentage');
+      data.addRows([
+        ['Very Satisfied', 0.85],
+        ['Somewhat Satisfied', 0.13],
+        ['neutral', 0.01],
+        ['Somewhat Dissatisfied', 0.01]
+      ]);
+      var info = new google.visualization.arrayToDataTable([
+        ['Satisfaction', 'Level', {role:'style'}],
+        ['Very Satisfied', 0.85, '#ff5000'],
+        ['Somewhat Satisfied', 0.13, '#d64705'],
+        ['neutral', 0.01, '#b13800'],
+        ['Somewhat Dissatisfied', 0.01, '#852c03']
+      ]);
+
+      var options = {
+        pieHole: 0.9,
+        colors:['#ff5000', '#d64705','#b13800', '#852c03'],
+        pieSliceTextStyle: {
+          color: '#FF5000',
+        },
+        legend: 'none'
+      };
+
+      var barOptions = {
+      }
+      // Instantiate and draw the chart.
+      var chart = new google.visualization.PieChart(document.getElementById('customer-service'));
+      var bars = new google.visualization.BarChart(document.getElementById('customer-service-low'));
+      chart.draw(data, options)
+      bars.draw(info, barOptions);
+
+    }
+  </script>
 </head>
 <body>
   <div class="top-bar">
@@ -197,14 +238,17 @@
       <div id="survey-block">
         <div class="container">
           <div class="survey-results">
-            <div class="survey-card">
-              <img src="assets/img/survey-left.jpg" alt="survey card" />
+            <div class="survey-card" id="customer-service">
+              <!--img src="assets/img/survey-left.jpg" alt="survey card" /-->
             </div>
-            <div class="survey-card">
-              <img src="assets/img/survey-mid.jpg" alt="survey card" />
+            <div class="survey-card" id="customer-service-low">
+
             </div>
-            <div class="survey-card">
-              <img src="assets/img/survey-right.jpg" alt="survey card" />
+            <div class="survey-card" id="product-quality">
+              <!--img src="assets/img/survey-mid.jpg" alt="survey card" /-->
+            </div>
+            <div class="survey-card" id="would-reccomend">
+              <!--img src="assets/img/survey-right.jpg" alt="survey card" /-->
             </div>
           </div>
         </div>
@@ -265,7 +309,7 @@
   </div><!--.footer-wrapper-->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-3.1.0.min.js"><\/script>')</script>
-  <script type="text/javascript" src="assets/js/vendor/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="assets/js/vendor/image-scale.min.js"></script>
   <script type="text/javascript" src="assets/js/app.js"></script>
 </body>
 </html>

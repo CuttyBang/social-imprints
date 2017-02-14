@@ -779,6 +779,7 @@ SURVEY BLOCK
   @include fill-parent;
   .survey-card {
     @include span-columns(4);
+    height:400px;
     img {
       width: 100%;
     }

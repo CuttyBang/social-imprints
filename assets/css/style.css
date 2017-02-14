@@ -1,0 +1,154 @@
+/*<================>
+IMPORTS
+<================>*/
+@import url(./webfont/stylesheet.css);
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/*<================>
+VARIABLES
+<================>*/
+/*<================>
+GLOBALS
+<================>*/
+* {
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "proxima_nova_rgbold", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  background-color: #101821;
+  z-index: 0; }
+
+/*<================>
+MAIN
+<================>*/
+.wrapper {
+  height: 100%;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .parallax:last-child {
+    margin-right: 0; }
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.parallax__layer--base {
+  transform: translateZ(0); }
+
+.parallax__layer--back {
+  transform: translateZ(-1px) scale(2); }
+
+.main-img {
+  position: fixed;
+  left: 0;
+  top: 0;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .main-img:last-child {
+    margin-right: 0; }
+
+/*<================>
+SECOND CONTENT
+<================>*/
+.intro-div {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-top: 100vh;
+  background-color: #cecfce;
+  text-align: center;
+  padding-bottom: 70px;
+  padding-top: 70px;
+  height: 700px;
+  color: #101821; }
+  .intro-div:last-child {
+    margin-right: 0; }
+
+.intro-div p {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%; }
+  .intro-div p:last-child {
+    margin-right: 0; }
+
+.spacer-div {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  height: 100px;
+  background-color: #eee; }
+  .spacer-div:last-child {
+    margin-right: 0; }
+
+/*<================>
+NAVIGATION
+<================>*/
+.nav-wrapper {
+  z-index: 100;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 70%;
+  display: block;
+  width: 100%;
+  height: 5rem; }
+
+.nav {
+  list-style: none;
+  color: #f9f8f4; }
+
+.nav:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.nav-item {
+  font-size: 1.75rem;
+  float: left;
+  margin-bottom: 0; }
+  .nav-item a {
+    color: #f9f8f4;
+    text-decoration: none;
+    letter-spacing: 0.2rem;
+    margin-right: 35px;
+    cursor: pointer;
+    line-height: 5rem; }
+
+/*<================>
+
+<================>*/
